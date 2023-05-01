@@ -6,6 +6,7 @@ const LayoutStyled = styled.main`
     margin: auto;
     max-inline-size: 75rem;
     padding-inline: 1.25rem;
+    padding-block: 2.5rem;
 
     @media screen and (min-width: 768px) {
         display: grid;

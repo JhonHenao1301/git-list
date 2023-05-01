@@ -4,14 +4,16 @@ import RepoItem from './repo-item'
 
 const RepoListStyled = styled.div`
     grid-area: repo-list;
-    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 `
 
 function RepoList({ repoList }) {
     return (
         <RepoListStyled>
             {repoList.map((item) => {
-                return <RepoItem {...item} key={item.id}/>
+                return <RepoItem {...item} key={item.id} />
             })}
         </RepoListStyled>
     )

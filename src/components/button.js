@@ -24,7 +24,6 @@ const ButtonStyled = styled.button`
     }
 `
 
-
 function Button({ text, link, className, icon }) {
     const component = link ? 'a' : 'button'
     let IconComponent = null
@@ -40,5 +39,25 @@ function Button({ text, link, className, icon }) {
         </ButtonStyled>
     )
 }
+
+export const ButtonContrast = styled(Button)`
+    background: var(--white);
+    color: var(--buttonBG);
+    &:hover {
+        background: var(--buttonBG);
+        color: var(--white);
+    }
+`
+
+export const ButtonRounded = styled(Button)`
+    border: 1px solid var(--grey-1);   
+    min-inline-size: initial;
+    border-radius: 50%;
+    padding: 0.75rem;
+    color: var(--white);
+    &:hover {
+        background: var(--buttonBG);
+    }
+`
 
 export default Button
