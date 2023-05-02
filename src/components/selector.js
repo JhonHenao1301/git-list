@@ -10,9 +10,14 @@ const SelectorStyled = styled.select`
     font: var(--buttonBG);
 `
 
-function Selector({children}) {
+function Selector({children, setLanguage}) {
+    function handleLanguage(e) {
+        if(setLanguage) {
+            setLanguage(e.target.value)
+        }
+    }
     return (
-        <SelectorStyled>
+        <SelectorStyled onChange={handleLanguage}>
             {children}
         </SelectorStyled>
     )

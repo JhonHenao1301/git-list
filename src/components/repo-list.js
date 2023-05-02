@@ -9,10 +9,24 @@ const RepoListStyled = styled.div`
     gap: 2rem;
 `
 
-function RepoList({ repoList }) {
+function RepoList({ repoList, search, language }) {
+    let list = repoList
+
+    if (language !== "" && language !== 'all') {
+        list = list.filter((item) => {
+          if (item.language) {
+            return item.language.toLowerCase() === language;
+          }
+        })
+    }
+    if(search !== '') {
+        list = list.filter((item) => {
+            return item.name.search(search) >= 0
+        })
+    }
     return (
         <RepoListStyled>
-            {repoList.map((item) => {
+            {list.map((item) => {
                 return <RepoItem {...item} key={item.id} />
             })}
         </RepoListStyled>

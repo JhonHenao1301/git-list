@@ -21,27 +21,37 @@ const FiltersStyled = styled.div`
     }
 `
 
-function Filters({ repoListCount = 0}) {
+function Filters({ repoListCount = 0, setSearch, setLanguage }) {
+    function handleChange(event) {
+        setSearch(event.target.value)
+    }
     return (
         <FiltersStyled>
             <h3 className='count'>
                 Repositorios ({repoListCount})
             </h3>
             <div className="action-list">
-                <InputText  type='text' placeholder='Find a repository'/>
+                <InputText  
+                    type='text' 
+                    placeholder='Find a repository'
+                    onChange={handleChange}
+                />
                 <div className="select-list">
-                    <Selector>
+                    <Selector defaultValue="">
                         <option value="all">All</option>
                         <option value="sources">Sources</option>
                         <option value="forks">Forks</option>
                         <option value="archived">Archived</option>
                         <option value="Mirrors">Mirrors</option>
                     </Selector>
-                    <Selector>
-                        <option value="language" disabled>Language</option>
+                    <Selector setLanguage={setLanguage}>
+                        <option value="" disabled>Language</option>
+                        <option value="all">All</option>
                         <option value="html">Html</option>
                         <option value="css">Css</option>
                         <option value="javascript">Javascript</option>
+                        <option value="react">React</option>
+                        <option value="java">Java</option>
                     </Selector>
                     <Selector>
                         <option value="order" disabled>Ordenar</option>
