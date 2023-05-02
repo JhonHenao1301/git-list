@@ -14,14 +14,29 @@ const LanguageStyled = styled.div`
     }
 `
 const languages = {
+    html: {
+        color: '#6B7A02'
+    },
     css: {
-        color: 'purple'
+        color: '#7300E5'
     },
     javascript: {
         color: 'yellow'
     },
     ruby: {
-        color: 'red'
+        color: '#990404'
+    },
+    dart: {
+        color: '#024F94'
+    },
+    java: {
+        color: '#F8711F'
+    },
+    vue: {
+        color: '#38BD14'
+    },
+    python: {
+        color: '#A29F05'
     }
 }
 
