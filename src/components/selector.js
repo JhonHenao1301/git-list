@@ -7,6 +7,7 @@ const SelectorStyled = styled.select`
     background: var(--buttonBG);
     color: var(--white);
     padding-inline: 1rem;
+    block-size: 2.5rem;
     font: var(--buttonBG);
 `
 

@@ -32,6 +32,17 @@ const GlobalStylesStyled = createGlobalStyle`
     font: var(--body1-regular);
     margin: 0;
   }
+
+  @media screen and (prefers-color-scheme: light) {
+    :root {
+      --primary: #57a6ff;
+      --buttonBG: #c5ced1;
+      --white: #000002; 
+      --bg: #fffffe; 
+      --grey: #8b949e;
+      --grey-1: #8b949e;
+    }
+  }
 `
 
 export default GlobalStylesStyled

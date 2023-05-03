@@ -6,6 +6,7 @@ import Separator from './separator'
 
 const FiltersStyled = styled.div`
     grid-area: filters;
+
     .count {
         color: var(--white);
         font: var(--headline2-semi-bold);
@@ -17,7 +18,16 @@ const FiltersStyled = styled.div`
     }
     .select-list {
         display: inherit;
-        gap: .5rem;
+        gap: 1rem;
+    }
+    @media only screen and (max-width: 760px) {
+        max-inline-size: 30rem;
+        .count {
+            margin-block-start: 2rem;
+        }
+        .action-list {
+            flex-direction: column;
+        }
     }
 `
 

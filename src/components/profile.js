@@ -6,7 +6,8 @@ import Icon from './icon'
 
 const ProfileStyled = styled.div`
     grid-area: profile;
-
+    display: flex;
+    flex-direction: column;
     .avatar {
         border-radius: 50%;
         border: 1px solid var(--grey-1);
@@ -48,6 +49,27 @@ const ProfileStyled = styled.div`
         gap: .5rem;
         margin-block-end: 1.5rem;
     }
+    @media screen and (max-width: 600px){
+        font: var(--headline2-light);
+        .profile-title {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            & img {
+                block-size: 100px;
+                inline-size: 100px;
+            }
+            & .profile-title-text {
+                display: inherit;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+        .buttons > * {
+            inline-size: 12rem;
+            flex: 1;
+        }  
+    }
 `
 
 function Profile(props) {
@@ -58,10 +80,13 @@ function Profile(props) {
 
     return (
         <ProfileStyled>
-            
-            <img src={avatar_url} className='avatar' width="278" height="278" alt="" />
-            <p className="name">{name}</p>
-            <p className="username">{login}</p>
+            <div className="profile-title">
+                <img src={avatar_url} className='avatar' width="278" height="278" alt="" />
+                <div className="profile-title-text">
+                    <p className="name">{name}</p>
+                    <p className="username">{login}</p>
+                </div>
+            </div>
             <div className="buttons">
                 <Button 
                     text="Follow"
@@ -84,16 +109,16 @@ function Profile(props) {
                 {bio}
             </p>
             <p className="info followers">
-                <span>*</span> {followers} <span>Followers</span> <span>*</span> {following} <span>Following</span>
+                <Icon name="user" /> {followers} <span>Followers</span> <span>*</span> {following} <span>Following</span>
             </p>
             <p className="info location">
-                {location}
+                <Icon name="location" /> {location}
             </p>
             <a className='info' href={blog} target='_blank' rel='noreferrer'>
-                {blog}
+                <Icon name="link" color="var(--white)"/> {blog}
             </a>
             <a className='info' href={`https://twitter.com/${twitter_username}`} target='_blank' rel='noreferrer'>
-                @{twitter_username}
+                <Icon name="twitter" /> @{twitter_username}
             </a>
         </ProfileStyled>
     )

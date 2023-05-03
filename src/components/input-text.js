@@ -10,6 +10,9 @@ const InputText = styled.input`
     border-radius: .5rem;
     color: var(--white);
     flex: 1;
+    @media screen and (max-width: 600px){
+        flex: 0;
+    }
 `
 
 // function InputText() {

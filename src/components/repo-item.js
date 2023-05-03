@@ -61,6 +61,13 @@ const RepoItemStyled = styled.div`
             text-transform: uppercase;
         }
     }
+    @media screen and (prefers-color-scheme: light) {
+        .topicItem {
+            color: var(--white);
+            background: var(--grey);
+            border: none;            
+        }
+    }
 `
 
 function RepoItem(props) {
