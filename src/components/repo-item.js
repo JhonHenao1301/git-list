@@ -41,6 +41,8 @@ const RepoItemStyled = styled.div`
         font: var(--caption-media);
         border: 1px solid var(--primary);
         background: #15223A;
+        inline-size: auto;
+        text-align: center;
         padding-inline: .75rem;
         padding-block: .25rem;
         border-radius: 2rem;

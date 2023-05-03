@@ -25,7 +25,7 @@ const ProfileStyled = styled.div`
     .username {
         margin-block-start: .5rem;
         margin-inline-end: 1.5rem;
-        font: var(--headline2-ligth);
+        font: var(--headline2-light);
     }
 
     .info {

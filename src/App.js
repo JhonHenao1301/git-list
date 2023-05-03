@@ -24,14 +24,14 @@ function App() {
   useEffect(() => {
     getUser(username).then(({ data, isError }) => {
       if (isError) {
-        console.log('no hemos encontrado a este crack')
+        console.log('We have not found this user')
         return
       }
       setUser(data)
     })
     getRepos(username).then(({ data, isError }) => {
     if (isError) {
-        console.log('no hemos encontrado los repos de este crack')
+        console.log('We have not fount this user repos')
         return
     }
     setRepos(data)

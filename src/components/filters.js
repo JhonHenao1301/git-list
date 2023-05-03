@@ -28,7 +28,7 @@ function Filters({ repoListCount = 0, setSearch, setLanguage }) {
     return (
         <FiltersStyled>
             <h3 className='count'>
-                Repositorios ({repoListCount})
+                Repositories ({repoListCount})
             </h3>
             <div className="action-list">
                 <InputText  
@@ -50,11 +50,10 @@ function Filters({ repoListCount = 0, setSearch, setLanguage }) {
                         <option value="html">Html</option>
                         <option value="css">Css</option>
                         <option value="javascript">Javascript</option>
-                        <option value="react">React</option>
                         <option value="java">Java</option>
                     </Selector>
                     <Selector>
-                        <option value="order" disabled>Ordenar</option>
+                        <option value="order" disabled>Order</option>
                         <option value="star">Star</option>
                     </Selector>
                 </div>

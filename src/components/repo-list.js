@@ -24,6 +24,11 @@ function RepoList({ repoList, search, language }) {
             return item.name.search(search) >= 0
         })
     }
+
+    if(list.length === 0) {
+        return <p>There are not repositories</p>
+    }
+
     return (
         <RepoListStyled>
             {list.map((item) => {
